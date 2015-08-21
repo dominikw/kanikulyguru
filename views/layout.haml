@@ -6,7 +6,6 @@
     = css :application
     %link{ rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css" }
     %link{ rel: "stylesheet", href: "https://fonts.googleapis.com/icon?family=Material+Icons" }
-
     %script{ src: "http://code.jquery.com/jquery-2.1.4.min.js" }
     %script{ src: "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js" }
 
@@ -14,6 +13,6 @@
     .container
       = yield
 
-      #footer
-        %p
+      .row
+        %p.center-align
           netguru.co
