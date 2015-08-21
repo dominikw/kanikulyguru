@@ -4,17 +4,24 @@
 
 .row
   .col.s12.center-align
-    %img.valign{ src: "/images/holidays.jpg" }
+    %img.valign.responsive-img{ src: "/images/holidays.jpg" }
 
 .row
   .col.s8.offset-s2
     %form.col.s12{ method: 'post' }
       .row
         .input-field.col.s12
-          %input{ placeholder: "Toggl API Token", type: "text", name: "token" }
+          %i.material-icons.prefix
+            account_circle
+          %input#token{ type: "text", name: "token" }
+          %label{ for: "token" }
+            Toggl API Token
+
       .row
         .input-field.col.s12
-          %input.datepicker{ placeholder: "Date", type: "date", name: "date" }
+          %i.material-icons.prefix
+            schedule
+          %input.datepicker#date{ type: "date", name: "date" }
 
       .row
         .col.s12.right-align
