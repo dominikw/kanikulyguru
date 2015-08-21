@@ -1,13 +1,31 @@
-require 'sinatra'
+require 'sinatra/base'
+require 'sinatra/assetpack'
 
-get '/' do
-  haml :index
-end
+class KanikulyGuru < Sinatra::Base
+  set :root, File.dirname(__FILE__)
 
-get '/form' do
-  haml :form
-end
+  register Sinatra::AssetPack
 
-post '/form' do
-  haml :form
+  assets {
+    serve '/css',    from: '/css'
+    serve '/images', from: '/images'
+
+    css :application, '/css/application.css', [
+      '/css/app.css'
+    ]
+
+    css_compression :sass
+  }
+
+  get '/' do
+    haml :index
+  end
+
+  get '/form' do
+    haml :form
+  end
+
+  post '/form' do
+    haml :form
+  end
 end
