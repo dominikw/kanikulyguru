@@ -1,7 +1,7 @@
 require 'sinatra'
 
 get '/' do
-  haml :index
+  haml :index, locals: { name: 'kanikuly' }
 end
 
 get '/form' do
