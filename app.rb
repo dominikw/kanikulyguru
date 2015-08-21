@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/assetpack'
 require_relative './app/models/app_data'
+require_relative './lib/holiday_calculator'
 
 class KanikulyGuru < Sinatra::Base
   set :root, File.dirname(__FILE__)
@@ -27,8 +28,9 @@ class KanikulyGuru < Sinatra::Base
     haml :index
   end
 
-  post '/' do
-    haml :index
+  post '/holiday' do
+    hours = HolidayCalculator.new.available_holiday(params[:token], params[:date])
+    haml :holiday, locals: { hours: hours }
   end
 
   get '/dashboard' do
