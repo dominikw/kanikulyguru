@@ -11,9 +11,13 @@ class KanikulyGuru < Sinatra::Base
   assets {
     serve '/css',    from: 'app/css'
     serve '/images', from: 'app/images'
+    serve '/js', from: 'app/js'
 
     css :application, '/css/application.css', [
       '/css/app.css'
+    ]
+    js :application, '/css/application.js', [
+      '/js/app.js'
     ]
 
     css_compression :sass
