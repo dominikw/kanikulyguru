@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do
-  "Welcome to kanikluguru!"
+  haml :index
 end
