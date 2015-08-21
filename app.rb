@@ -7,8 +7,8 @@ class KanikulyGuru < Sinatra::Base
   register Sinatra::AssetPack
 
   assets {
-    serve '/css',    from: '/css'
-    serve '/images', from: '/images'
+    serve '/css',    from: 'app/css'
+    serve '/images', from: 'app/images'
 
     css :application, '/css/application.css', [
       '/css/app.css'
