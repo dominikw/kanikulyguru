@@ -1,6 +1,24 @@
-%h1 dashboard
-
-%ul
+.row
+  .col.s12
+    %h1 dashboard
+.row
   - apps.each do |app|
-    %li
-      = app.name
+    .col.s12.m3
+      .card
+        .card-image.waves-effect.waves-block.waves-light
+          %img.activator{ src: app.image_url }
+        .card-content
+          %span.card-title.activator.grey-text.text-darken-4
+            = app.name
+            %i.material-icons.right
+              more_vert
+          %p
+            %a{ href: app.link }
+              = app.link
+
+        .card-reveal
+          %span.card-title.grey-text.text-darken-4
+            = app.name
+            %i.material-icons.right close
+          %p
+            = app.description
