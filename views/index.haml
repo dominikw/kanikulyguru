@@ -10,37 +10,32 @@
   .col.s8.offset-s2
     %form.col.s12{ method: 'post', action: '/holiday' }
       .row
-        .input-field.col.s12
+        .input-field.col.s11
           %i.material-icons.prefix
             account_circle
           %input#token{ type: "text", name: "token" }
           %label{ for: "token" }
             Toggl API Token
-
+        .col.s1
+          %a#info-btn1.modal-trigger{ href: "#info" }
+            %i.small.material-icons
+              info_outline
 
 
       .row
-        .input-field.col.s12
+        .input-field.col.s11
           %i.material-icons.prefix
             schedule
           %input.datepicker#date{ type: "date", name: "date" }
+        .col.s1
+          %a#info-btn2.modal-trigger{ href: "#info2" }
+            %i.small.material-icons
+              info_outline
 
       .row
         .col.s12.right-align
           %button.btn.waves-effect.waves-light{ type: "submit", name: "Submit" }
             Submit
-            %i.material-icons
-              send
-
-  .col.s1
-    .row
-      %a.modal-trigger{ href: "#info" }
-        %i.medium.material-icons
-          info_outline
-    .row
-      %a.modal-trigger{ href: "#info2" }
-        %i.medium.material-icons
-          info_outline
 
 .modal#info
   .modal-content
