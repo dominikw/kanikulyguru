@@ -6,6 +6,7 @@ class HolidayCalculator
 
   def available_holiday(toggl_token, dg_start)
     entries = fetch_entries(toggl_token, DateTime.parse(dg_start))
+    work_entries = entries.reject { |entry| NOT_WORK_PROJECTS.include?(entry.pid) }
     vacation_entries = entries.select { |entry| VACATION_PROJECTS.include?(entry.pid) }
     vacation = sum_duration(vacation_entries)
     worked = sum_duration(work_entries)
