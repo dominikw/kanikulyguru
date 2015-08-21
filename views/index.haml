@@ -17,6 +17,8 @@
           %label{ for: "token" }
             Toggl API Token
 
+
+
       .row
         .input-field.col.s12
           %i.material-icons.prefix
@@ -29,3 +31,29 @@
             Submit
             %i.material-icons
               send
+
+  .col.s1
+    .row
+      %a.modal-trigger{ href: "#info" }
+        %i.medium.material-icons
+          info_outline
+    .row
+      %a.modal-trigger{ href: "#info2" }
+        %i.medium.material-icons
+          info_outline
+
+.modal#info
+  .modal-content
+    .row
+      .col.s10.offset-s1.center-align
+        You need to copy your token, which identifies you, from Toggl profile page.
+    .row
+      .col.s12.center-align
+        %a.btn{ href: "https://www.toggl.com/app/profile" }
+          Link
+
+.modal#info2
+  .modal-content
+    .row
+      .col.s10.offset-s1.center-align
+        You need to pick a date of your first B2B contract.
