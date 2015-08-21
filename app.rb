@@ -23,12 +23,8 @@ class KanikulyGuru < Sinatra::Base
     haml :index
   end
 
-  get '/form' do
-    haml :form
-  end
-
-  post '/form' do
-    haml :form
+  post '/' do
+    haml :index
   end
 
   get '/dashboard' do
