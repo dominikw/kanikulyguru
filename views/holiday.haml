@@ -1,6 +1,21 @@
-.valign-wrapper.holiday
-  .valign
-    %h1
-      You've got
-      = hours
-      holiday hours left
+
+.row
+  .col.s12
+    .valign-wrapper.holiday
+      .valign
+        %h1
+          You've got
+          %span.hours
+            = "#{'%.02f' % result[:hours_left]}"
+          holiday hours left
+.center-align
+  .row.brakedown
+    .col.s12.m4
+      .hours= "#{'%.02f' % result[:worked]}"
+      .title Worked
+    .col.s12.m4
+      .hours= "#{'%.02f' % result[:earned]}"
+      .title Earned
+    .col.s12.m4
+      .hours= "#{'%.02f' % result[:vacation]}"
+      .title Used

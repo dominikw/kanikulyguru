@@ -11,4 +11,19 @@ body {
 
 .holiday {
   margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.hours {
+  color: black;
+  font-weight: bold;
+}
+
+.brakedown {
+  .hours {
+    font-size: 30px;
+  }
+  .title {
+    font-size: 25px;
+  }
 }
