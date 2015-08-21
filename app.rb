@@ -2,7 +2,7 @@ require 'sinatra'
 require_relative './app/models/app_data'
 
 get '/' do
-  haml :index
+  haml :index, locals: { name: 'kanikuly' }
 end
 
 get '/form' do
