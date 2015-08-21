@@ -9,7 +9,12 @@ class HolidayCalculator
     work_entries = entries.reject { |entry| NOT_WORK_PROJECTS.include?(entry.pid) }
     vacation_entries = entries.select { |entry| VACATION_PROJECTS.include?(entry.pid) }
     difference = sum_duration(work_entries) / 16.0 - sum_duration(vacation_entries)
-    to_hours(difference)
+    {
+      hours_left: to_hours(difference),
+      worked: to_hours(sum_duration(work_entries)),
+      earned: (to_hours(sum_duration(work_entries)) / 16.0),
+      vacation: to_hours(sum_duration(vacation_entries))
+    }
   end
 
   private
@@ -24,6 +29,6 @@ class HolidayCalculator
   end
 
   def to_hours(work_duration)
-    (work_duration.to_f / 60.0 / 60.0).round(2)
+    work_duration.to_f / 60.0 / 60.0
   end
 end

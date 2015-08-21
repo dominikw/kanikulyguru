@@ -5,10 +5,25 @@ html, body {
 body {
   margin: 0px;
   padding: 0px;
-  background: #EEEEEE;
+  background: #e3e3e3;
   color: #656565;
 }
 
 .holiday {
   margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.hours {
+  color: black;
+  font-weight: bold;
+}
+
+.brakedown {
+  .hours {
+    font-size: 30px;
+  }
+  .title {
+    font-size: 25px;
+  }
 }

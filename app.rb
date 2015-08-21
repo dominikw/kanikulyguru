@@ -29,8 +29,8 @@ class KanikulyGuru < Sinatra::Base
   end
 
   post '/holiday' do
-    hours = HolidayCalculator.new.available_holiday(params[:token], params[:date])
-    haml :holiday, locals: { hours: hours }
+    result = HolidayCalculator.new.available_holiday(params[:token], params[:date])
+    haml :holiday, locals: { result: result }
   end
 
   get '/dashboard' do
