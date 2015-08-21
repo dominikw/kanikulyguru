@@ -17,6 +17,7 @@ body {
 .hours {
   color: black;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 .brakedown {
@@ -36,4 +37,8 @@ body {
 .footer {
   padding-top: 5px;
   border-top: 1px solid #d3d3d3;
+}
+
+.row .col.info-btn {
+  padding-top: 15px;
 }

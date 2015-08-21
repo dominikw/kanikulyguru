@@ -10,25 +10,26 @@
   .col.s8.offset-s2
     %form.col.s12{ method: 'post', action: '/holiday' }
       .row
-        .input-field.col.s11
+        .input-field.col.s10
           %i.material-icons.prefix
             account_circle
           %input#token{ type: "text", name: "token" }
           %label{ for: "token" }
-            Toggl API Token
-        .col.s1
-          %a#info-btn1.modal-trigger{ href: "#info" }
+            Toggl Token
+        .col.s2.info-btn
+          %a.modal-trigger{ href: "#info" }
             %i.small.material-icons
               info_outline
 
 
       .row
-        .input-field.col.s11
-          %i.material-icons.prefix
-            schedule
-          %input.datepicker#date{ type: "date", name: "date" }
-        .col.s1
-          %a#info-btn2.modal-trigger{ href: "#info2" }
+        .col.s10
+          .input-field
+            %i.material-icons.prefix
+              schedule
+            %input.datepicker#date{ type: "date", name: "date" }
+        .col.s2.info-btn
+          %a.modal-trigger{ href: "#info2" }
             %i.small.material-icons
               info_outline
 
@@ -51,4 +52,4 @@
   .modal-content
     .row
       .col.s10.offset-s1.center-align
-        You need to pick a date of your first B2B contract.
+        Your B2B contract start date.
