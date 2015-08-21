@@ -4,11 +4,11 @@
 
 .row
   .col.s12.center-align
-    %img.valign.responsive-img{ src: "/images/holidays.jpg" }
+    %img.z-depth-2.valign.responsive-img{ src: "/images/holidays.jpg" }
 
 .row
   .col.s8.offset-s2
-    %form.col.s12{ method: 'post' }
+    %form.col.s12{ method: 'post', action: '/holiday' }
       .row
         .input-field.col.s12
           %i.material-icons.prefix
