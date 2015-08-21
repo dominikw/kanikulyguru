@@ -8,12 +8,15 @@ class HolidayCalculator
     entries = fetch_entries(toggl_token, dg_start)
     work_entries = entries.reject { |entry| NOT_WORK_PROJECTS.include?(entry.pid) }
     vacation_entries = entries.select { |entry| VACATION_PROJECTS.include?(entry.pid) }
-    difference = sum_duration(work_entries) / 16.0 - sum_duration(vacation_entries)
+    vacation = sum_duration(vacation_entries)
+    worked = sum_duration(work_entries)
+    earned = worked / 16.0
+    left = earned - vacation
     {
-      hours_left: to_hours(difference),
-      worked: to_hours(sum_duration(work_entries)),
-      earned: (to_hours(sum_duration(work_entries)) / 16.0),
-      vacation: to_hours(sum_duration(vacation_entries))
+      hours_left: to_hours(left),
+      worked: to_hours(worked),
+      earned: to_hours(earned),
+      vacation: to_hours(vacation)
     }
   end
 
