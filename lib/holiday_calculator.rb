@@ -36,7 +36,7 @@ class HolidayCalculator
   end
 
   def sum_duration(entries)
-    entries.map(&:duration).inject(0, &:+)
+    entries.map(&:duration).reject { |duration| duration < 0 }.inject(0, &:+)
   end
 
   def to_hours(work_duration)
