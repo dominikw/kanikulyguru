@@ -30,7 +30,7 @@ class KanikulyGuru < Sinatra::Base
 
   post '/holiday' do
     result = HolidayCalculator.new.available_holiday(params[:token], params[:date])
-    gif = Giphy.random('vacation')
+    gif = Giphy.random('beach')
     haml :holiday, locals: { result: result, gif: gif }
   end
 
